@@ -9,7 +9,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 /** @final */
 class LineItem implements LineItemInterface, ResourceInterface
 {
-    /** @var string */
+    /** @var int|null */
     protected $id;
 
     /** @var InvoiceInterface */
@@ -59,12 +59,12 @@ class LineItem implements LineItemInterface, ResourceInterface
         $this->variantCode = $variantCode;
     }
 
-    public function getId(): string
+    public function getId(): ?int
     {
         return $this->id();
     }
 
-    public function id(): string
+    public function id(): ?int
     {
         return $this->id;
     }

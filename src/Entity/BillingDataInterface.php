@@ -6,7 +6,7 @@ namespace Sylius\InvoicingPlugin\Entity;
 
 interface BillingDataInterface
 {
-    public function id(): int;
+    public function id(): ?int;
 
     public function firstName(): string;
 

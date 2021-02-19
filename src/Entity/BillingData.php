@@ -9,7 +9,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 /** @final */
 class BillingData implements BillingDataInterface, ResourceInterface
 {
-    /** @var int */
+    /** @var int|null */
     protected $id;
 
     /** @var string */
@@ -61,12 +61,12 @@ class BillingData implements BillingDataInterface, ResourceInterface
         $this->company = $company;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id();
     }
 
-    public function id(): int
+    public function id(): ?int
     {
         return $this->id;
     }
