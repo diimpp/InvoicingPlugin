@@ -7,8 +7,9 @@
     <address>
         <strong>{{ billingData.firstName }} {{ billingData.lastName }}</strong>
         {% if billingData.company %}
-            {{ billingData.company }}<br/>
+            {{ billingData.company }}
         {% endif %}
+        <br/>
         {{ billingData.street }}<br/>
         {{ billingData.city }}<br/>
         <i class="{{ billingData.countryCode|lower }} flag"></i>
