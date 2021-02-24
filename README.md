@@ -18,10 +18,10 @@ both customer and admin to download invoices related to the order.
 
 ## Business value
 
-The primary aim of Invoicing Plugin is to create a document representing Customer's will to buy particular products and 
+The primary aim of Invoicing Plugin is to create a document representing Customer's will to buy particular products and
 pay for them.
 
-An Invoice can also be treated as a proof of placing an Order. Thus, it is downloadable as .pdf file and can be sent to 
+An Invoice can also be treated as a proof of placing an Order. Thus, it is downloadable as .pdf file and can be sent to
 Customer manually by the Administrator or automatically once an Order is paid.
 
 Additional feature of the plugin that fulfills Invoicing domain is the ability to set billing data on a Seller.
@@ -33,7 +33,7 @@ Additional feature of the plugin that fulfills Invoicing domain is the ability t
     ```bash
     composer require sylius/invoicing-plugin
     ```
-    
+
     > Remember to allow community recipes with `composer config extra.symfony.allow-contrib true` or during plugin installation process
 
 2. Apply migration to your database:
@@ -43,7 +43,7 @@ Additional feature of the plugin that fulfills Invoicing domain is the ability t
     ```
 
 3. Check if you have wkhtmltopdf binary. If not, you can download it [here](https://wkhtmltopdf.org/downloads.html).
-   
+
 In case wkhtmltopdf is not located in /usr/local/bin/wkhtmltopdf, add a following snippet at the end of your application's config.yml:
 
 ```
@@ -118,11 +118,6 @@ Sonata events. You can read about customizing templates via events here:
 
 <http://docs.sylius.com/en/latest/customization/template.html>
 
-Invoicing Plugin renders invoices grid using a certain pattern, including displaying a dot next to channel in which an invoice as issued.
-The dot's color is dependant on a property defined on Channel entity or, if not provided, a global parameter named `default_channel_color`.
-
-Like any other parameter, `default_channel_color` can also be overwritten in your `config.yml` file.
-
 ## Fixtures
 
 You can add `ShopBillingData` fixtures into a yaml to add Channel ShopBillingData info to your installation.
@@ -130,5 +125,5 @@ More instructions on the [fixtures configuration instructions](docs/fixtures.md)
 
 ## Security issues
 
-If you think that you have found a security issue, please do not use the issue tracker and do not post it publicly. 
+If you think that you have found a security issue, please do not use the issue tracker and do not post it publicly.
 Instead, all security issues must be sent to `security@sylius.com`.
