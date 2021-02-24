@@ -10,6 +10,7 @@
     <div class="ui stackable two column grid">
         <div class="ten wide column">
             {% include '@SyliusInvoicingPlugin/Invoice/Show/_header.html.twig' %}
+            {% include '@SyliusInvoicingPlugin/Invoice/Show/_breadcrumb.html.twig' %}
         </div>
         <div class="six wide right aligned column">
             {% set path = path('sylius_invoicing_plugin_admin_invoice_index') %}
@@ -22,8 +23,6 @@
             {{ buttons.default(path, 'sylius_invoicing_plugin.ui.resend_invoice'|trans, invoice.id, 'send') }}
         </div>
     </div>
-
-    {% include '@SyliusInvoicingPlugin/Invoice/Show/_breadcrumb.html.twig' %}
 
     <div class="ui stackable segment grid">
         <div class="twelve wide column">
