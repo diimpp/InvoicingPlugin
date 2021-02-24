@@ -10,9 +10,18 @@ use Sylius\Component\Core\Model\AdjustmentInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
 use Sylius\InvoicingPlugin\Entity\LineItem;
+use Sylius\InvoicingPlugin\Factory\LineItemFactoryInterface;
 
 final class LineItemsConverter implements LineItemsConverterInterface
 {
+    /** @var LineItemFactoryInterface */
+    private $lineItemFactory;
+
+    public function __construct(LineItemFactoryInterface $lineItemFactory)
+    {
+        $this->lineItemFactory = $lineItemFactory;
+    }
+
     public function convert(OrderInterface $order): Collection
     {
         $orderItems = $order->getItems();
@@ -23,7 +32,7 @@ final class LineItemsConverter implements LineItemsConverterInterface
         foreach ($orderItems as $orderItem) {
             $variant = $orderItem->getVariant();
 
-            $lineItems->add(new LineItem(
+            $lineItems->add($this->lineItemFactory->createForData(
                 $orderItem->getProductName(),
                 $orderItem->getQuantity(),
                 $orderItem->getUnitPrice(),
@@ -37,7 +46,7 @@ final class LineItemsConverter implements LineItemsConverterInterface
 
         /** @var AdjustmentInterface $shippingAdjustment */
         foreach ($shippingAdjustments as $shippingAdjustment) {
-            $lineItems->add(new LineItem(
+            $lineItems->add($this->lineItemFactory->createForData(
                 $shippingAdjustment->getLabel(),
                 1,
                 $shippingAdjustment->getAmount(),

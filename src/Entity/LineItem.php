@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Sylius\InvoicingPlugin\Entity;
 
-use Sylius\Component\Resource\Model\ResourceInterface;
-
-/** @final */
-class LineItem implements LineItemInterface, ResourceInterface
+class LineItem implements LineItemInterface
 {
     /** @var string */
     protected $id;

@@ -6,8 +6,8 @@ namespace Sylius\InvoicingPlugin\Entity;
 
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Core\Model\ChannelInterface;
+use Webmozart\Assert\Assert;
 
-/** @final */
 class Invoice implements InvoiceInterface
 {
     /** @var string */
@@ -60,6 +60,10 @@ class Invoice implements InvoiceInterface
         ChannelInterface $channel,
         InvoiceShopBillingDataInterface $shopBillingData
     ) {
+        Assert::allIsInstanceOf($lineItems, LineItemInterface::class);
+        Assert::notEmpty($lineItems);
+        Assert::allIsInstanceOf($taxItems, TaxItemInterface::class);
+
         $this->id = $id;
         $this->number = $number;
         $this->orderNumber = $orderNumber;

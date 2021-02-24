@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Sylius\InvoicingPlugin\Entity;
 
-interface InvoiceShopBillingDataInterface
+use Sylius\Component\Resource\Model\ResourceInterface;
+
+interface InvoiceShopBillingDataInterface extends ResourceInterface
 {
     public function getId(): string;
 

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Sylius\InvoicingPlugin\Entity;
 
-interface LineItemInterface
+use Sylius\Component\Resource\Model\ResourceInterface;
+
+interface LineItemInterface extends ResourceInterface
 {
     public function id(): string;
 

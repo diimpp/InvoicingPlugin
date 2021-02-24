@@ -16,7 +16,7 @@
         <service id="sylius_invoicing_plugin.generator.invoice" class="Sylius\InvoicingPlugin\Generator\InvoiceGenerator">
             <argument type="service" id="sylius_invoicing_plugin.generator.invoice_identifier" />
             <argument type="service" id="sylius_invoicing_plugin.generator.invoice_number_generator" />
-            <argument type="service" id="sylius_invoicing_plugin.custom_factory.invoice" />
+            <argument type="service" id="sylius_invoicing_plugin.factory.invoice" />
             <argument type="service" id="sylius_invoicing_plugin.converter.billing_data" />
             <argument type="service" id="sylius_invoicing_plugin.converter.invoice_shop_billing_data" />
             <argument type="service" id="sylius_invoicing_plugin.converter.line_items" />

@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Sylius\InvoicingPlugin\Entity;
 
-use Sylius\Component\Resource\Model\ResourceInterface;
-
-/** @final */
-class InvoiceShopBillingData implements InvoiceShopBillingDataInterface, ResourceInterface
+class InvoiceShopBillingData implements InvoiceShopBillingDataInterface
 {
     /** @var string */
     protected $id;
