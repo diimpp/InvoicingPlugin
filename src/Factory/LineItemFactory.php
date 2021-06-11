@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Sylius\InvoicingPlugin\Factory;
 
+use Sylius\Component\Resource\Exception\UnsupportedMethodException;
 use Sylius\InvoicingPlugin\Entity\LineItemInterface;
 
 final class LineItemFactory implements LineItemFactoryInterface
@@ -22,9 +23,10 @@ final class LineItemFactory implements LineItemFactoryInterface
         $this->className = $className;
     }
 
+    /** @throws UnsupportedMethodException */
     public function createNew(): LineItemInterface
     {
-        throw new \InvalidArgumentException('This object is not default constructable.');
+        throw new UnsupportedMethodException('createNew');
     }
 
     public function createForData(

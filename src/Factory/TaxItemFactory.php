@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Sylius\InvoicingPlugin\Factory;
 
+use Sylius\Component\Resource\Exception\UnsupportedMethodException;
 use Sylius\InvoicingPlugin\Entity\TaxItemInterface;
 
 final class TaxItemFactory implements TaxItemFactoryInterface
@@ -22,9 +23,10 @@ final class TaxItemFactory implements TaxItemFactoryInterface
         $this->className = $className;
     }
 
+    /** @throws UnsupportedMethodException */
     public function createNew(): TaxItemInterface
     {
-        throw new \InvalidArgumentException('This object is not default constructable.');
+        throw new UnsupportedMethodException('createNew');
     }
 
     public function createForData(

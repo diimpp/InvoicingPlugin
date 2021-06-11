@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Sylius\InvoicingPlugin\Factory;
 
+use Sylius\Component\Resource\Exception\UnsupportedMethodException;
 use Sylius\InvoicingPlugin\Entity\BillingDataInterface;
 
 final class BillingDataFactory implements BillingDataFactoryInterface
@@ -22,9 +23,10 @@ final class BillingDataFactory implements BillingDataFactoryInterface
         $this->className = $className;
     }
 
+    /** @throws UnsupportedMethodException */
     public function createNew(): BillingDataInterface
     {
-        throw new \InvalidArgumentException('This object is not default constructable.');
+        throw new UnsupportedMethodException('createNew');
     }
 
     public function createForData(
