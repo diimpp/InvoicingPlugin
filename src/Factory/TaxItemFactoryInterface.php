@@ -9,14 +9,5 @@ use Sylius\InvoicingPlugin\Entity\TaxItemInterface;
 
 interface TaxItemFactoryInterface extends FactoryInterface
 {
-    public function createForData(
-        string $name,
-        int $quantity,
-        int $unitPrice,
-        int $subtotal,
-        int $taxTotal,
-        int $total,
-        ?string $variantName = null,
-        ?string $variantCode = null
-    ): TaxItemInterface;
+    public function createForData(string $label, int $amount): TaxItemInterface;
 }

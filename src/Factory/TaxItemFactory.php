@@ -29,25 +29,8 @@ final class TaxItemFactory implements TaxItemFactoryInterface
         throw new UnsupportedMethodException('createNew');
     }
 
-    public function createForData(
-        string $name,
-        int $quantity,
-        int $unitPrice,
-        int $subtotal,
-        int $taxTotal,
-        int $total,
-        ?string $variantName = null,
-        ?string $variantCode = null
-    ): TaxItemInterface {
-        return new $this->className(
-            $name,
-            $quantity,
-            $unitPrice,
-            $subtotal,
-            $taxTotal,
-            $total,
-            $variantName,
-            $variantCode
-        );
+    public function createForData(string $label, int $amount): TaxItemInterface
+    {
+        return new $this->className($label, $amount);
     }
 }
