@@ -9,7 +9,6 @@ use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Core\Model\AdjustmentInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
-use Sylius\InvoicingPlugin\Entity\LineItem;
 use Sylius\InvoicingPlugin\Factory\LineItemFactoryInterface;
 
 final class LineItemsConverter implements LineItemsConverterInterface

@@ -8,7 +8,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Core\Model\AdjustmentInterface;
 use Sylius\Component\Core\Model\OrderInterface;
-use Sylius\InvoicingPlugin\Entity\TaxItem;
 use Sylius\InvoicingPlugin\Factory\TaxItemFactoryInterface;
 use Webmozart\Assert\Assert;
 
@@ -43,7 +42,7 @@ final class TaxItemsConverter implements TaxItemsConverterInterface
         }
 
         foreach ($temporaryTaxItems as $label => $amount) {
-            $taxItems->add($this->lineItemFactory->createForData($label, $amount));
+            $taxItems->add($this->taxItemFactory->createForData($label, $amount));
         }
 
         return $taxItems;
